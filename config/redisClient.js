@@ -1,14 +1,18 @@
 import redis from 'redis';
+import { config } from '../config/config.js';
 
 let redisClient;
+
+const hostRedis = config.redisHost;
+const portRedis = config.redisPort;
 
 // Function untuk inisialisasi dan konek Redis client
 const initializeRedisClient = () => {
     if (!redisClient) {
         redisClient = redis.createClient({
             socket: {
-                host: 'localhost', // Redis server URL
-                port: 6379,        // default Redis port
+                host: hostRedis, // Redis server URL
+                port: portRedis, // default Redis port
             }
         });
 
