@@ -1,5 +1,5 @@
 import express from 'express';
-import {createUser,deleteUser,getUsers,updateUser,getUserById,loginUser} from '../controller/userController.js';
+import {createUser,deleteUser,getUsers,updateUser,getUserById,loginUser,getUserByAccountNumber, getUserByIdentityNumber} from '../controller/userController.js';
 import { authenticateJWT } from '../config/authMiddleware.js';
 
 const router = express.Router();
@@ -13,6 +13,12 @@ router.get('/users', authenticateJWT, getUsers);
 
 // Route untuk mendapatkan user by ID
 router.get('/users/:id', authenticateJWT, getUserById);
+
+// Route untuk mendapatkan user by accountNumber
+router.get('/users/accountNumber/:accountNumber', authenticateJWT, getUserByAccountNumber);
+
+// Route untuk mendapatkan user by identityNumber
+router.get('/users/identityNumber/:identityNumber', authenticateJWT, getUserByIdentityNumber);
 
 // Route untuk mengupdate user by ID
 router.put('/users/:id', authenticateJWT, updateUser);
