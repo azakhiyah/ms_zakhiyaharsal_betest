@@ -2,12 +2,12 @@ import redis from 'redis';
 
 let redisClient;
 
-// Function to initialize and connect Redis client
+// Function untuk inisialisasi dan konek Redis client
 const initializeRedisClient = () => {
     if (!redisClient) {
         redisClient = redis.createClient({
             socket: {
-                host: 'localhost', // or Redis server URL
+                host: 'localhost', // Redis server URL
                 port: 6379,        // default Redis port
             }
         });
@@ -17,7 +17,7 @@ const initializeRedisClient = () => {
             console.error("Redis error:", err);
         });
 
-        // Connect the client and handle connection errors
+        // konek client dan menangani koneksi errors
         redisClient.connect().catch((err) => {
             console.error('Error connecting to Redis:', err);
         });
@@ -25,7 +25,7 @@ const initializeRedisClient = () => {
     return redisClient;
 };
 
-// Call the function to initialize Redis client
+// memanggil function untuk inisialisasi Redis client
 initializeRedisClient();
 
 export default redisClient;

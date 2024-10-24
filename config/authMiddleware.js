@@ -11,9 +11,9 @@ export const authenticateJWT = (req, res, next) => {
     }
 
     try {
-        // Verify token
-        const decoded = jwt.verify(token.split(' ')[1], JWT_SECRET); // The token is typically sent as "Bearer <token>"
-        req.user = decoded.userId; // Attach the user ID to request object for use in next middleware or controller
+        // verifikasi Token
+        const decoded = jwt.verify(token.split(' ')[1], JWT_SECRET); 
+        req.user = decoded.userId; 
         next();
     } catch (err) {
         res.status(401).json({ success: false, message: 'Token is not valid' });

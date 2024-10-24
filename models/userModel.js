@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema({
     password: { 
         type: String, 
         required: true 
-    } // Add password field
+    } 
 });
 
 const User = mongoose.model('User', userSchema);

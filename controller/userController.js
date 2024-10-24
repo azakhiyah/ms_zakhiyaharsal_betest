@@ -40,7 +40,7 @@ export const loginUser = async (req, res) => {
     }
 };
 
-// untuk mendapatkan semua user
+// Get All Users
 export const getUsers = async (req, res) => {
     try {
         // Check if users data is in Redis cache
@@ -67,7 +67,7 @@ export const getUsers = async (req, res) => {
     }
 };
 
-// untuk mendaftarkan user
+// Create a new user
 export const createUser = async (req, res) => {
     const { userName, accountNumber, emailAddress, identityNumber, password } = req.body; // Expect user data in the request body
 
@@ -103,7 +103,7 @@ export const createUser = async (req, res) => {
     }
 };
 
-// untuk mendapatkan user by ID
+// Get a single user by ID
 export const getUserById = async (req, res) => {
     const { id } = req.params;
 
@@ -139,7 +139,7 @@ export const getUserById = async (req, res) => {
     }
 };
 
-// untuk Update user by ID
+// Update a User by ID
 export const updateUser = async (req, res) => {
     const { id } = req.params;
     const user = req.body;
@@ -168,7 +168,7 @@ export const updateUser = async (req, res) => {
     }
 };
 
-// untuk menghapus user by ID
+// Delete a user by ID
 export const deleteUser = async (req, res) => {
     const { id } = req.params;
 

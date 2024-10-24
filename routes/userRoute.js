@@ -3,21 +3,21 @@ import {createUser,deleteUser,getUsers,updateUser,getUserById,loginUser} from '.
 import { authenticateJWT } from '../config/authMiddleware.js';
 
 const router = express.Router();
-// Route to create a new user
+// Route untuk membuat user baru
 router.post('/register', createUser);
 
 router.post('/login', loginUser);
 
-// Route to get all users
+// Route untuk mendapatakan semua user
 router.get('/users', authenticateJWT, getUsers);
 
-// Route to get a single user by ID
+// Route untuk mendapatkan user by ID
 router.get('/users/:id', authenticateJWT, getUserById);
 
-// Route to update a user
+// Route untuk mengupdate user by ID
 router.put('/users/:id', authenticateJWT, updateUser);
 
-// Route to delete a user
+// Route untuk menghapus user by ID
 router.delete('/users/:id', authenticateJWT, deleteUser);
 
 export default router;
