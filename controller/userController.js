@@ -139,6 +139,69 @@ export const getUserById = async (req, res) => {
     }
 };
 
+// Get a single user by accountNumber
+export const getUserByAccountNumber = async (req, res) => {
+    const { accountNumber } = req.params;
+
+    try {
+        // Check if user data is in Redis cache
+        const cachedUser = await redisClient.get(`user:accountNumber:${accountNumber}`);
+
+        if (cachedUser) {
+            // If user data is found in cache, return it
+            console.log('Serving from cache');
+            return res.status(200).json({ success: true, data: JSON.parse(cachedUser) });
+        } else {
+            // Fetch user data from MongoDB
+            const user = await User.findOne({ accountNumber });
+            if (!user) {
+                return res.status(404).json({ success: false, message: "User not found" });
+            }
+
+            // Store the user data in Redis cache with an expiration time
+            await redisClient.setEx(`user:accountNumber:${accountNumber}`, 3600, JSON.stringify(user)); // Cache for 1 hour (3600 seconds)
+
+            // Return the user data from database
+            return res.status(200).json({ success: true, data: user });
+        }
+    } catch (error) {
+        console.error("Error in fetching user by account number:", error.message);
+        return res.status(500).json({ success: false, message: "Server Error" });
+    }
+};
+
+// Get a single user by identityNumber
+export const getUserByIdentityNumber = async (req, res) => {
+    const { identityNumber } = req.params;
+
+    try {
+        // Check if user data is in Redis cache
+        const cachedUser = await redisClient.get(`user:identityNumber:${identityNumber}`);
+
+        if (cachedUser) {
+            // If user data is found in cache, return it
+            console.log('Serving from cache');
+            return res.status(200).json({ success: true, data: JSON.parse(cachedUser) });
+        } else {
+            // Fetch user data from MongoDB
+            const user = await User.findOne({ identityNumber });
+            if (!user) {
+                return res.status(404).json({ success: false, message: "User not found" });
+            }
+
+            // Store the user data in Redis cache with an expiration time
+            await redisClient.setEx(`user:identityNumber:${identityNumber}`, 3600, JSON.stringify(user)); // Cache for 1 hour (3600 seconds)
+
+            // Return the user data from database
+            return res.status(200).json({ success: true, data: user });
+        }
+    } catch (error) {
+        console.error("Error in fetching user by identity number:", error.message);
+        return res.status(500).json({ success: false, message: "Server Error" });
+    }
+};
+
+
 // Update a User by ID
 export const updateUser = async (req, res) => {
     const { id } = req.params;
