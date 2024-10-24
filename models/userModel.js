@@ -13,7 +13,8 @@ const userSchema = new mongoose.Schema({
     emailAddress: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        match: /.+\@.+\..+/ // Basic email format validation
     },
     identityNumber: {
         type: String,
@@ -23,8 +24,9 @@ const userSchema = new mongoose.Schema({
     password: { 
         type: String, 
         required: true 
-    } 
-});
+    }
+
+}, { timestamps: true }); 
 
 const User = mongoose.model('User', userSchema);
 
