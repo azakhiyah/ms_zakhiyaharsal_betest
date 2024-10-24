@@ -28,6 +28,9 @@ const userSchema = new mongoose.Schema({
 
 }, { timestamps: true }); 
 
+userSchema.index({ accountNumber: 1 }); // Index for accountNumber
+userSchema.index({ emailAddress: 1 });   // Index for emailAddress
+
 const User = mongoose.model('User', userSchema);
 
 export default User;
