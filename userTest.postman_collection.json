@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "3184c5de-18cb-442f-8d24-e44cde26df33",
+		"name": "userJeniusTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9027037"
+	},
+	"item": [
+		{
+			"name": "Live Render",
+			"item": [
+				{
+					"name": "login User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"emailAddress\":\"nabil@gmail.com\",\n    \"password\":\"abc456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ms-zakhiyaharsal-betest.onrender.com/api/login",
+							"protocol": "https",
+							"host": [
+								"ms-zakhiyaharsal-betest",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\":\"dhyni\",\n    \"accountNumber\":\"321654\",\n    \"emailAddress\":\"dhyni@gmail.com\",\n    \"identityNumber\":\"4568904321\",\n    \"password\":\"dhyni\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ms-zakhiyaharsal-betest.onrender.com/api/register",
+							"protocol": "https",
+							"host": [
+								"ms-zakhiyaharsal-betest",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MWEwM2JhNmU2OWQxODZkZTA2Y2U3YiIsImlhdCI6MTcyOTgyNDU0OSwiZXhwIjoxNzI5ODI4MTQ5fQ._Bil2sqF1-9_byzhz-N-jC4GbWKh1MCN6ODWZXyvEHU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ms-zakhiyaharsal-betest.onrender.com/api/users",
+							"protocol": "https",
+							"host": [
+								"ms-zakhiyaharsal-betest",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MWEwM2JhNmU2OWQxODZkZTA2Y2U3YiIsImlhdCI6MTcyOTgxOTE5MCwiZXhwIjoxNzI5ODIyNzkwfQ.NDKelE8dnRUC_q8DVxkZgh4L0oY33YZvSrpVqW8dhDg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ms-zakhiyaharsal-betest.onrender.com/api/users/671ad0082fa77ba8805fb5b8",
+							"protocol": "https",
+							"host": [
+								"ms-zakhiyaharsal-betest",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"671ad0082fa77ba8805fb5b8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by accountNumber",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MWEwM2JhNmU2OWQxODZkZTA2Y2U3YiIsImlhdCI6MTcyOTgxOTE5MCwiZXhwIjoxNzI5ODIyNzkwfQ.NDKelE8dnRUC_q8DVxkZgh4L0oY33YZvSrpVqW8dhDg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ms-zakhiyaharsal-betest.onrender.com/api/users/accountNumber/1234567",
+							"protocol": "https",
+							"host": [
+								"ms-zakhiyaharsal-betest",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"accountNumber",
+								"1234567"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user by identityNumber",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MWEwM2JhNmU2OWQxODZkZTA2Y2U3YiIsImlhdCI6MTcyOTgxOTE5MCwiZXhwIjoxNzI5ODIyNzkwfQ.NDKelE8dnRUC_q8DVxkZgh4L0oY33YZvSrpVqW8dhDg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ms-zakhiyaharsal-betest.onrender.com/api/users/identityNumber/7654321",
+							"protocol": "https",
+							"host": [
+								"ms-zakhiyaharsal-betest",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"identityNumber",
+								"7654321"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user by id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MWEwM2JhNmU2OWQxODZkZTA2Y2U3YiIsImlhdCI6MTcyOTgxOTE5MCwiZXhwIjoxNzI5ODIyNzkwfQ.NDKelE8dnRUC_q8DVxkZgh4L0oY33YZvSrpVqW8dhDg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ms-zakhiyaharsal-betest.onrender.com/api/users/67199802c5233651858d9920",
+							"protocol": "https",
+							"host": [
+								"ms-zakhiyaharsal-betest",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"67199802c5233651858d9920"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user by id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MWEwM2JhNmU2OWQxODZkZTA2Y2U3YiIsImlhdCI6MTcyOTgxOTE5MCwiZXhwIjoxNzI5ODIyNzkwfQ.NDKelE8dnRUC_q8DVxkZgh4L0oY33YZvSrpVqW8dhDg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\":\"nareswara Naufal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ms-zakhiyaharsal-betest.onrender.com/api/users/671ad0082fa77ba8805fb5b8",
+							"protocol": "https",
+							"host": [
+								"ms-zakhiyaharsal-betest",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"users",
+								"671ad0082fa77ba8805fb5b8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
