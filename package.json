@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "mocha --timeout 10000"
   },
   "type": "module",
   "keywords": [],
@@ -17,5 +17,11 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.7.2",
     "redis": "^4.7.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.2",
+    "mocha": "^10.7.3",
+    "sinon": "^7.5.0",
+    "sinon-mongoose": "^2.3.0"
   }
 }
