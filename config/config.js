@@ -6,9 +6,9 @@ dotenv.config();
 // Export environment variables yang dibutuhkan  global
 export const config = {
     jwtSecret: process.env.key_secret,
-    dbUri: process.env.mongo_url,
+    dbUri: process.env.MONGO_URI,
     port: process.env.port || 3000,
-    redisHost:process.env.redis_host,
-    redisPort:process.env.redis_port
+    redisHost:process.env.REDIS_HOST,
+    redisPort:process.env.REDIS_PORT
 
 };
